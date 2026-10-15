@@ -1,7 +1,13 @@
 
+Olá! Me chamo Rhiana e sou estudante da FMP no curso Análise e Desenvolvimento de Sistemas!
+
+Vou te mostrar um projeto web q usei meus conhecimentos com html(estrutura da página), css(Visual da página) e 
+javascript(Funcionamento da pagina para o carrossel de fotos para para esquerda e direita com uma seta, botao whatsapp para atendimento direto e responsividade).
+
 Sobre o projeto:
 
-O Vem Comer um Dog! é um site desenvolvido para uma lanchonete fictícia especializada em hot dogs. O projeto tem como objetivo apresentar os produtos, divulgar promoções e facilitar o contato dos clientes para realizar pedidos.
+O Vem Comer um Dog! é um site desenvolvido para uma lanchonete fictícia especializada em hot dogs. O projeto tem como objetivo apresentar os produtos,
+divulgar promoções e facilitar o contato dos clientes para realizar pedidos.
 
 O site possui uma identidade visual divertida e chamativa, com cores inspiradas na marca, imagens dos produtos e uma navegação simples, como:
  
@@ -9,13 +15,6 @@ O site possui uma identidade visual divertida e chamativa, com cores inspiradas 
 - Divulgar promoções, como a promoção Dog do Casal.
 - Exibir imagens de produtos e outros espaços da lanchonete.
 - Facilitar o contato dos clientes por meio do WhatsApp.
-
-
-O que foi utilizado:
-
-- **HTML5:** estrutura e organização do conteúdo.
-- **CSS3:** estilização, cores, layout, degradês e responsividade.
-- **JavaScript:** funcionamento do carrossel de imagens.
 
 A Identidade visual:
 
