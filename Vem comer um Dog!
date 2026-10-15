@@ -1,0 +1,80 @@
+
+Sobre o projeto:
+
+O Vem Comer um Dog! é um site desenvolvido para uma lanchonete fictícia especializada em hot dogs. O projeto tem como objetivo apresentar os produtos, divulgar promoções e facilitar o contato dos clientes para realizar pedidos.
+
+O site possui uma identidade visual divertida e chamativa, com cores inspiradas na marca, imagens dos produtos e uma navegação simples, como:
+ 
+- Apresentar os hot dogs disponíveis e seus preços.
+- Divulgar promoções, como a promoção Dog do Casal.
+- Exibir imagens de produtos e outros espaços da lanchonete.
+- Facilitar o contato dos clientes por meio do WhatsApp.
+
+
+O que foi utilizado:
+
+- **HTML5:** estrutura e organização do conteúdo.
+- **CSS3:** estilização, cores, layout, degradês e responsividade.
+- **JavaScript:** funcionamento do carrossel de imagens.
+
+A Identidade visual:
+
+A identidade visual foi criada para transmitir diversão, praticidade e apetite.
+
+- Vermelho: cor principal da marca, utilizada para destacar o site.
+- Vermelho escuro: utilizado no fundo e em partes do layout.
+- Amarelo: utilizado nos destaques e detalhes.
+- Creme: utilizado nos textos para facilitar a leitura.
+- Marrom: utilizado em elementos que remetem à comida e à madeira.
+- A logo apresenta um personagem de hot dog com uma expressão divertida, reforçando a personalidade da marca.
+
+Suas Funcionalidades:
+
+- Cabeçalho com navegação entre as seções.
+- Apresentação da promoção Dog do Casal.
+- Texto de apresentação da lanchonete.
+- Carrossel de imagens.
+- Exibição dos hot dogs com descrições e preços.
+- Seção de adicionais.
+- Botão para entrar em contato pelo WhatsApp.
+- Rodapé com informações de contato e endereço fictício.
+
+ # Organização dos arquivos:
+
+vem-comer-um-dog/
+│
+├── index.html
+│
+└── img/
+    ├── logohotdog.png
+    ├── promocao.jpg
+    ├── foto1.jpg
+    ├── foto2.jpg
+    ├── foto3.jpg
+    ├── foto4.jpg
+    ├── foto5.jpg
+    ├── foto6.jpg
+    ├── dog1.jpg
+    ├── dog2.jpg
+    ├── dog3.jpg
+    └── dog4.jpg
+
+*Observação: os nomes e a quantidade de imagens podem variar conforme os arquivos utilizados no projeto.*
+
+ Responsividade (celulares):
+
+O projeto utiliza recursos de CSS para adaptar a apresentação do site a diferentes tamanhos de tela, buscando facilitar a navegação em computadores e dispositivos móveis.
+
+Como visualizar o projeto?
+
+1. Baixe ou clone este repositório.
+2. Abra a pasta do projeto no Visual Studio Code.
+3. Abra o arquivo `index.html` no navegador ou utilize a extensão Live Server.
+4. Confira se as imagens estão dentro da pasta `img` e se os caminhos no HTML estão corretos.
+
+ Finalidade acadêmica:
+
+Este projeto foi desenvolvido com finalidade educacional, colocando em prática os conhecimentos de desenvolvimento web, organização de conteúdo, estilização e interatividade.
+
+
+
