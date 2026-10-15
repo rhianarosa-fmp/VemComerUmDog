@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vem comer um Dog!</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5b0b0b;
+            color: #fff8df;
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            background: linear-gradient(to right, #e60000 0%, #e60000 25%, #6e0a0d 55%, #430707 100%);
+            padding: 8px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            border-bottom: 2px solid #f6cf55;
+        }
+
+        .logo {
+    width: 250px;
+    height: auto;
+}
+        
+
+        nav a {
+            color: #fff8df;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f6cf55;
+        }
+
+        .botao-header {
+            background-color: #f6cf55;
+            color: #430707;
+
+            padding: 12px 20px;
+            border-radius: 25px;
+
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           PROMOÇÃO
+        ========================= */
+
+        .promocao {
+            background: linear-gradient(135deg, #a70f0f, #6e0808);
+
+            padding: 60px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 40px;
+
+            min-height: 420px;
+        }
+
+        .promocao-texto {
+            flex: 1;
+        }
+
+        .promocao-texto h1 {
+            color: #f6cf55;
+
+            font-size: clamp(42px, 6vw, 78px);
+
+            line-height: 0.95;
+
+            margin-bottom: 20px;
+        }
+
+        .promocao-texto h2 {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .promocao-texto p {
+            font-size: 20px;
+
+            line-height: 1.5;
+        }
+
+        .preco-promocao {
+            display: inline-block;
+
+            background-color: #f6cf55;
+            color: #430707;
+
+            font-size: 32px;
+            font-weight: bold;
+
+            padding: 12px 28px;
+
+            border-radius: 40px;
+
+            margin-top: 20px;
+        }
+
+        .promocao-imagem {
+            flex: 1;
+            text-align: center;
+        }
+
+        .promocao-imagem img {
+            width: 100%;
+            max-width: 550px;
+            max-height: 350px;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================
+           APRESENTAÇÃO
+        ========================= */
+
+        .apresentacao {
+            background-color: #3f180d;
+
+            padding: 55px 10%;
+
+            text-align: center;
+        }
+
+        .apresentacao h2 {
+            color: #f6cf55;
+
+            font-size: 40px;
+
+            margin-bottom: 18px;
+        }
+
+        .apresentacao p {
+            max-width: 850px;
+
+            margin: auto;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CARROSSEL
+        ========================= */
+
+        .galeria {
+            padding: 60px 7%;
+
+            background-color: #6d0b0b;
+
+            text-align: center;
+        }
+
+        .galeria h2,
+        .cardapio h2,
+        .adicionais h2 {
+
+            color: #f6cf55;
+
+            font-size: 45px;
+
+            margin-bottom: 10px;
+        }
+
+        .galeria-subtitulo {
+            margin-bottom: 30px;
+
+            font-size: 18px;
+        }
+
+        .carrossel {
+            max-width: 1050px;
+
+            margin: auto;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+        }
+
+        .slides {
+            display: flex;
+
+            transition: transform 0.4s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+
+            height: 430px;
+
+            background-color: #3f180d;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+        .seta {
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            background-color: #f6cf55;
+
+            color: #430707;
+
+            border: none;
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            z-index: 2;
+        }
+
+        .seta:hover {
+            background-color: #fff8df;
+        }
+
+        .esquerda {
+            left: 15px;
+        }
+
+        .direita {
+            right: 15px;
+        }
+
+        .indicadores {
+            margin-top: 18px;
+        }
+
+        .ponto {
+            display: inline-block;
+
+            width: 11px;
+            height: 11px;
+
+            margin: 0 5px;
+
+            border-radius: 50%;
+
+            background-color: #9e5b31;
+
+            cursor: pointer;
+        }
+
+        .ponto.ativo {
+            background-color: #f6cf55;
+        }
+
+
+        /* =========================
+           CARDÁPIO
+        ========================= */
+
+        .cardapio {
+            padding: 70px 7%;
+
+            background-color: #5b0b0b;
+
+            text-align: center;
+        }
+
+        .cardapio-intro {
+            margin-bottom: 35px;
+
+            font-size: 18px;
+        }
+
+        .produto {
+            max-width: 1100px;
+
+            margin: 25px auto;
+
+            min-height: 300px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            text-align: left;
+
+            background-color: #3f180d;
+
+            border: 2px solid #9e5b31;
+        }
+
+        .produto:nth-child(even) {
+            background-color: #f1d7a2;
+
+            color: #431707;
+
+            flex-direction: row-reverse;
+        }
+
+        .produto-imagem {
+            width: 50%;
+
+            min-height: 300px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background-color: #4b1b0d;
+        }
+
+        .produto:nth-child(even) .produto-imagem {
+            background-color: #ead09a;
+        }
+
+        .produto-imagem img {
+            width: 100%;
+
+            height: 300px;
+
+            object-fit: contain;
+        }
+
+        .produto-info {
+            width: 50%;
+
+            padding: 35px;
+        }
+
+        .produto-info h3 {
+            display: inline-block;
+
+            background-color: #f6cf55;
+
+            color: #431707;
+
+            padding: 9px 18px;
+
+            border-radius: 5px;
+
+            font-size: 27px;
+
+            margin-bottom: 18px;
+        }
+
+        .produto-info p {
+            font-size: 17px;
+
+            line-height: 1.6;
+
+            margin-bottom: 22px;
+        }
+
+        .preco {
+            display: inline-block;
+
+            background-color: #f6cf55;
+
+            color: #431707;
+
+            padding: 10px 25px;
+
+            border-radius: 30px;
+
+            font-size: 25px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           ADICIONAIS
+        ========================= */
+
+        .adicionais {
+            padding: 55px 7%;
+
+            background-color: #3f180d;
+
+            text-align: center;
+        }
+
+        .lista-adicionais {
+            max-width: 1000px;
+
+            margin: 35px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .adicional {
+            background-color: #5b2612;
+
+            border: 1px solid #9e5b31;
+
+            border-radius: 15px;
+
+            padding: 25px 15px;
+        }
+
+        .adicional h3 {
+            color: #f6cf55;
+
+            margin-bottom: 8px;
+        }
+
+        .adicional p {
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           BOTÃO WHATSAPP
+        ========================= */
+
+        .pedido {
+            padding: 70px 20px;
+
+            text-align: center;
+
+            background: linear-gradient(135deg, #8f0d0d, #5b0b0b);
+        }
+
+        .pedido h2 {
+            font-size: 38px;
+
+            margin-bottom: 12px;
+        }
+
+        .pedido p {
+            margin-bottom: 25px;
+        }
+
+        .botao-whatsapp {
+            display: inline-block;
+
+            background-color: #f6cf55;
+
+            color: #431707;
+
+            text-decoration: none;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            padding: 17px 35px;
+
+            border-radius: 40px;
+
+            transition: 0.2s;
+        }
+
+        .botao-whatsapp:hover {
+            transform: scale(1.04);
+
+            background-color: #fff8df;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background-color: #300606;
+
+            padding: 50px 7% 25px;
+        }
+
+        .contato {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding-bottom: 35px;
+
+            border-bottom: 1px solid #8c3820;
+        }
+
+        .contato-coluna {
+            flex: 1;
+        }
+
+        .contato h3 {
+            color: #f6cf55;
+
+            margin-bottom: 12px;
+
+            font-size: 20px;
+        }
+
+        .contato p {
+            line-height: 1.7;
+        }
+
+        .logo-footer {
+            width: 150px;
+
+            margin-bottom: 12px;
+        }
+
+        .rodape-final {
+            text-align: center;
+
+            padding-top: 25px;
+
+            color: #f6cf55;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 18px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .promocao {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .produto,
+            .produto:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .produto-imagem,
+            .produto-info {
+                width: 100%;
+            }
+
+            .produto-info {
+                text-align: center;
+            }
+
+            .lista-adicionais {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contato {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .slide {
+                height: 280px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .lista-adicionais {
+                grid-template-columns: 1fr;
+            }
+
+            .promocao-texto h1 {
+                font-size: 48px;
+            }
+
+            .galeria h2,
+            .cardapio h2,
+            .adicionais h2 {
+                font-size: 35px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CABEÇALHO
+         ========================= -->
+
+    <header>
+
+        <!-- TROQUE logo.png PELA SUA LOGO -->
+
+        <a href="#">
+            <img src="img/logo hotdog transparente.png" alt="Logo Vem Comer um Dog" class="logo">
+
+
+        <nav>
+
+            <a href="#inicio">Início</a>
+
+            <a href="#cardapio">Cardápio</a>
+
+            <a href="#contato">Contato</a>
+
+        </nav>
+
+
+        <!-- TROQUE O NÚMERO DO WHATSAPP -->
+
+        <a
+            class="botao-header"
+            href="https://wa.me/5500000000000"
+            target="_blank"
+        >
+            Peça agora
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================
+         PROMOÇÃO
+         ========================= -->
+
+    <section
+        class="promocao"
+        id="inicio"
+    >
+
+        <div class="promocao-texto">
+
+            <h1>
+                Promoção
+                <br>
+                Dog do Casal!
+            </h1>
+
+            <h2>
+                2 Hot Dogs Tradicionais + 2 Refrigerantes
+            </h2>
+
+            <p>
+                Uma opção deliciosa para dividir com quem você gosta.
+            </p>
+
+            <span class="preco-promocao">
+                R$ 29,90
+            </span>
+
+        </div>
+
+
+        <div class="promocao-imagem">
+
+            <!-- TROQUE promocao.jpg PELA SUA IMAGEM -->
+
+            <img
+                src="img/ChatGPT Image hot dog casal.png"
+                alt="Promoção Dog do Casal"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         APRESENTAÇÃO
+         ========================= -->
+
+    <section class="apresentacao">
+
+        <h2>
+            Vem comer um Dog!
+        </h2>
+
+        <p>
+            Aqui no Vem Comer um Dog!, cada hot dog é feito
+            com ingredientes selecionados, muito carinho e
+            aquele sabor que você já ama. Somos uma lanchonete
+            feita para quem valoriza um bom lanche, uma
+            experiência gostosa e momentos especiais!
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         CARROSSEL
+         ========================= -->
+
+    <section class="galeria">
+
+        <h2>
+            De dar água na boca!
+        </h2>
+
+        <p class="galeria-subtitulo">
+            Confira alguns dos nossos dogs.
+        </p>
+
+
+        <div class="carrossel">
+
+            <div
+                class="slides"
+                id="slides"
+            >
+
+
+                <!-- TROQUE foto1.jpg ATÉ foto6.jpg -->
+
+                <div class="slide">
+
+                    <img
+                        src="img/espaço kids atualizado gemini.jpg"
+                        alt="Cachorro-quente 1"
+                    >
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img
+                        src="img/trio de fritos gemini.jpg"
+                        alt="Cachorro-quente 2"
+                    >
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img
+                        src="img/frente do estabelecimento gemini.jpg"
+                        alt="Cachorro-quente 3"
+                    >
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img
+                        src="img/banda do dog gemini.jpg"
+                        alt="Cachorro-quente 4"
+                    >
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img
+                        src="img/cozinha dog gemini.jpg"
+                        alt="Cachorro-quente 5"
+                    >
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img
+                        src="img/mascote salsicha gemini.jpg"
+                        alt="Cachorro-quente 6"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="seta esquerda"
+                onclick="mudarSlide(-1)"
+            >
+                ‹
+            </button>
+
+
+            <button
+                class="seta direita"
+                onclick="mudarSlide(1)"
+            >
+                ›
+            </button>
+
+        </div>
+
+
+        <div class="indicadores">
+
+            <span
+                class="ponto ativo"
+                onclick="irParaSlide(0)"
+            ></span>
+
+            <span
+                class="ponto"
+                onclick="irParaSlide(1)"
+            ></span>
+
+            <span
+                class="ponto"
+                onclick="irParaSlide(2)"
+            ></span>
+
+            <span
+                class="ponto"
+                onclick="irParaSlide(3)"
+            ></span>
+
+            <span
+                class="ponto"
+                onclick="irParaSlide(4)"
+            ></span>
+
+            <span
+                class="ponto"
+                onclick="irParaSlide(5)"
+            ></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CARDÁPIO
+         ========================= -->
+
+    <section
+        class="cardapio"
+        id="cardapio"
+    >
+
+        <h2>
+            Nosso Cardápio
+        </h2>
+
+        <p class="cardapio-intro">
+            Dogs deliciosos, feitos com carinho!
+        </p>
+
+
+
+        <!-- DOG 1 -->
+
+        <div class="produto">
+
+            <div class="produto-imagem">
+
+                <!-- TROQUE dog1.jpg -->
+
+                <img
+                    src="img/dog tradicional chat.png"
+                    alt="Dog Tradicional"
+                >
+
+            </div>
+
+
+            <div class="produto-info">
+
+                <h3>
+                    Dog Tradicional
+                </h3>
+
+                <p>
+                    Salsicha, pão, molho de tomate,
+                    mostarda, maionese e batata palha.
+                </p>
+
+                <span class="preco">
+                    R$ 8,90
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DOG 2 -->
+
+        <div class="produto">
+
+            <div class="produto-imagem">
+
+                <!-- TROQUE dog2.jpg -->
+
+                <img
+                    src="img/dog especial chat.png"
+                    alt="Dog Especial"
+                >
+
+            </div>
+
+
+            <div class="produto-info">
+
+                <h3>
+                    Dog Especial
+                </h3>
+
+                <p>
+                    Salsicha, pão, molho de tomate,
+                    mostarda, maionese, queijo mussarela
+                    e batata palha.
+                </p>
+
+                <span class="preco">
+                    R$ 11,90
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DOG 3 -->
+
+        <div class="produto">
+
+            <div class="produto-imagem">
+
+                <!-- TROQUE dog3.jpg -->
+
+                <img
+                    src="img/dog bacon chat.png"
+                    alt="Dog Bacon"
+                >
+
+            </div>
+
+
+            <div class="produto-info">
+
+                <h3>
+                    Dog Bacon
+                </h3>
+
+                <p>
+                    Salsicha, pão, molho de tomate,
+                    mostarda, maionese, queijo mussarela,
+                    bacon e batata palha.
+                </p>
+
+                <span class="preco">
+                    R$ 13,90
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DOG 4 -->
+
+        <div class="produto">
+
+            <div class="produto-imagem">
+
+                <!-- TROQUE dog4.jpg -->
+
+                <img
+                    src="img/dog duplo chat.png"
+                    alt="Dog Duplo"
+                >
+
+            </div>
+
+
+            <div class="produto-info">
+
+                <h3>
+                    Dog Duplo
+                </h3>
+
+                <p>
+                    Duas salsichas, pão, molho de tomate,
+                    mostarda, maionese, queijo mussarela
+                    e batata palha.
+                </p>
+
+                <span class="preco">
+                    R$ 16,90
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ADICIONAIS
+         ========================= -->
+
+    <section class="adicionais">
+
+        <h2>
+            Adicione mais sabor!
+        </h2>
+
+
+        <div class="lista-adicionais">
+
+
+            <div class="adicional">
+
+                <h3>
+                    Bacon
+                </h3>
+
+                <p>
+                    R$ 2,00
+                </p>
+
+            </div>
+
+
+            <div class="adicional">
+
+                <h3>
+                    Queijo
+                </h3>
+
+                <p>
+                    R$ 1,50
+                </p>
+
+            </div>
+
+
+            <div class="adicional">
+
+                <h3>
+                    Milho
+                </h3>
+
+                <p>
+                    R$ 1,00
+                </p>
+
+            </div>
+
+
+            <div class="adicional">
+
+                <h3>
+                    Batata palha
+                </h3>
+
+                <p>
+                    R$ 1,00
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PEDIDO
+         ========================= -->
+
+    <section class="pedido">
+
+        <h2>
+            Ficou com vontade?
+        </h2>
+
+        <p>
+            Faça seu pedido de um jeito rápido e fácil!
+        </p>
+
+
+        <!-- TROQUE O NÚMERO DO WHATSAPP -->
+
+        <a
+            class="botao-whatsapp"
+            href="https://wa.me/5500000000000"
+            target="_blank"
+        >
+            💬 Faça seu pedido pelo WhatsApp
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         RODAPÉ
+         ========================= -->
+
+    <footer id="contato">
+
+        <div class="contato">
+
+
+            <div class="contato-coluna">
+
+                <!-- TROQUE logo.png -->
+
+                <img
+                    class="logo-footer"
+                    src="img/Vem comer um dog! canva.png"
+                    alt="Vem comer um Dog!"
+                >
+
+                <p>
+                    Um dog já muda o seu dia!
+                </p>
+
+            </div>
+
+
+            <div class="contato-coluna">
+
+                <h3>
+                    Nosso endereço
+                </h3>
+
+                <p>
+                    Av. das Delícias, 123 — Centro
+                    <br>
+                    São Bento do Sul — SC
+                </p>
+
+            </div>
+
+
+            <div class="contato-coluna">
+
+                <h3>
+                    E-mail
+                </h3>
+
+                <p>
+                    contato@vemcomerumdog.com.br
+                </p>
+
+            </div>
+
+
+            <div class="contato-coluna">
+
+                <h3>
+                    Redes sociais
+                </h3>
+
+                <p>
+                    Instagram
+                    <br>
+                    Facebook
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="rodape-final">
+
+            © 2026 Vem comer um Dog!
+            — Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT DO CARROSSEL
+         ========================= -->
+
+    <script>
+
+        let slideAtual = 0;
+
+        const slides =
+            document.getElementById("slides");
+
+        const pontos =
+            document.querySelectorAll(".ponto");
+
+
+        function mostrarSlide(numero) {
+
+            slideAtual = numero;
+
+            slides.style.transform =
+                "translateX(-" +
+                (slideAtual * 100) +
+                "%)";
+
+
+            pontos.forEach(function(ponto, index) {
+
+                ponto.classList.remove("ativo");
+
+                if (index === slideAtual) {
+
+                    ponto.classList.add("ativo");
+
+                }
+
+            });
+
+        }
+
+
+        function mudarSlide(direcao) {
+
+            slideAtual += direcao;
+
+
+            if (slideAtual >= 6) {
+
+                slideAtual = 0;
+
+            }
+
+
+            if (slideAtual < 0) {
+
+                slideAtual = 5;
+
+            }
+
+
+            mostrarSlide(slideAtual);
+
+        }
+
+
+        function irParaSlide(numero) {
+
+            mostrarSlide(numero);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
